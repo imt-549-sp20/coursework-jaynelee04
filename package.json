@@ -1,0 +1,25 @@
+{
+  "name": "coursework-jaynelee04",
+  "version": "1.0.0",
+  "description": "## Weekly assignment checklist",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/browser-sync  start --server --files='**/*'",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imt-549-sp20/coursework-jaynelee04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imt-549-sp20/coursework-jaynelee04/issues"
+  },
+  "homepage": "https://github.com/imt-549-sp20/coursework-jaynelee04#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
