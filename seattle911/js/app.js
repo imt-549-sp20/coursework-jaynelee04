@@ -19,22 +19,33 @@ L.tileLayer(
 ).addTo(mymap);
 
 // Parse the JSON response
-function parseAsJSON(response) {
-  // Return the JSON from the response
-}
+function parseAsJSON (response) {
+  return response.json ();
+};
+// Return the JSON from the response
 
 // What to do if there is an error
 function handleError(err) {
   // Show the error to the user
   console.error(err);
   alert(err.message);
-}
+};
 
 // Render the map on screen
 function renderMap(data) {
+  data.forEach(function(location) {
+    if (location.longitude !== undefined && location.latitude !== undefined) {
+      var marker = L.marker ([location.latitude, location. longitude]).addTo(mymap);
+      var fromnow = moment (location.datetime).fromNow();
+      marker.bindPopup("<b>" + location.type + "</b><br>" + fromnow + "<br>" + location.address);
+  }
+});
+}
   // `data` is an array of objects
   // Add each object to the map if `latitude` and `longitude` are available
   // Use `bindPopup()` to add `type`, `datetime`, and `address` properties
-}
-
 // Fetch the API datasource, parse JSON, render the map, and handle errors
+fetch (seattle911API)
+.then(parseAsJSON)
+.then (renderMap)
+.catch (handleError)
